@@ -22,4 +22,6 @@ urlpatterns = [
     path('', appview.index),
     path('index', appview.index),
     path('input', appview.input),
+    path('about', appview.about),
+    path('contact', appview.contact),
 ]

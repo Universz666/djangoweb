@@ -22,3 +22,9 @@ def input(req):
         services = Service.objects.all()
         print(services)
         return render(req, 'myapp/input.html', { 'services': services })
+
+def about(req):
+    return render(req, 'myapp/about.html')
+
+def contact(req):
+    return render(req, 'myapp/contact.html')
