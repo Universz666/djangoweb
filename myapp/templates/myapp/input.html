@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tournaments</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+    <style>
+        body,
+        h1 {
+            font-family: "Raleway", sans-serif
+        }
+        
+        body,
+        html {
+            height: 100%
+        }
+        
+        .bgimg {
+            background-image: url('https://image.freepik.com/free-photo/soft-cloudy-is-gradient-pastel-abstract-sky-background-sweet-color_6529-1791.jpg');
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .magin {
+            margin-left: 150px;
+            margin-right: 150px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .font {
+            font-family: Anakotmai;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="w3-display-middle">
+            <h1 class="w3-jumbo w3-animate-top" style="color: white;">Esports</h1>
+            <hr class="w3-border-grey" style="margin:auto;width:40%">
+            <p class="w3-large w3-center" style="font-family: Anakotmai;">สมัครเข้าร่วมทีมอีสปอร์ต</p>
+        </div>
+    </div>
+
+    <div class="magin">
+        <form action="Memo" method="POST" enctype="multipart/form-data;charset=UTF-8">
+            {% csrf_token %}
+            <div class="form-group row">
+                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg" style="font-family: Anakotmai;">ชื่อ - นามสกุล</label>
+                <div class="col-sm-10">
+                    <input type="text" name="icon" class="form-control form-control-lg" id="colFormLabelLg" style="font-family: Anakotmai;">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg" style="font-family: Anakotmai;">ชื่อในเกมส์</label>
+                <div class="col-sm-10">
+                    <input type="text" name="title" class="form-control form-control-lg" id="colFormLabelLg" style="font-family: Anakotmai;">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg" style="font-family: Anakotmai;">เกมส์ที่เล่น</label>
+                <div class="col-sm-10">
+                    <input type="text" name="detail" class="form-control form-control-lg" id="colFormLabelLg" style="font-family: Anakotmai;">
+                </div>
+            </div><br>
+            <div class="font">
+                <center><button type="submit" class="btn btn-outline-dark" style="width: 200px;">ยืนยัน</button></center>
+            </div>
+        </form>
+    </div>
+
+    <div class="magin">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ชื่อ - นามสกุล</th>
+                    <th scope="col">ชื่อในเกมส์</th>
+                    <th scope="col">เกมส์ที่เล่น</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in services %}
+                <tr>
+                    <th scope="row">*</th>
+                    <td>{{ s.icon }}</td>
+                    <td>{{ s.title }}</td>
+                    <td>{{ s.detail }}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

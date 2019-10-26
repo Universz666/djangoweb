@@ -1,64 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="django form with utf-8">
-    <meta name="author" content="wichit2s">
-    <title>Linux Services</title>
-
-    {% load static %}
-    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
-
-    <style>
-        .filled {
-            width: 80%;
-            padding: 5px;
-        }
-        
-        .spacing {
-            padding: 1em;
-        }
-    </style>
-</head>
+<html>
+<title>Dozen esports</title>
+<style>
+    .gg {
+        margin-top: 100px;
+    }
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <body>
-    <nav>
-        <h1> Linux Services Page </h1>
-    </nav>
-    <div>
-        <section class="filled">
-            <form action="index" method="POST" enctype="multipart/form-data;charset=UTF-8">
-                {% csrf_token %}
-                <div class="spacing"><input class="filled" type="text" name="icon" value="icon ไอคอน" /></div>
-                <div class="spacing"><input class="filled" type="text" name="title" value="title บริการ" /></div>
-                <div class="spacing"><input class="filled" type="text" name="detail" value="detail รายละเอียด" /></div>
-                <div class="spacing"><button style="padding: 2em;" type="submit">Submit</button></div>
-            </form>
-        </section>
-        <div>
-            <table style="width:80%; border: 1px solid black; padding: 1em;">
-                <tr>
-                    <th>Icon</th>
-                    <th>Title</th>
-                    <th>Detail</th>
-                </tr>
-                {% for s in services %}
-                <tr>
-                    <td> <i class="fa {{s.icon}}"></i> {{ s.icon }}</td>
-                    <td>{{ s.title }}</td>
-                    <td>{{ s.detail }}</td>
-                </tr>
-                {% endfor %}
-            </table>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+            <a href="#home" class="w3-bar-item w3-button"><b>DEV</b> Univers666</a>
+            <!-- Float links to the right. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="input" class="w3-bar-item w3-button">Tournament</a>
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+            </div>
         </div>
     </div>
-    <footer>
-        <div>
-            <div>Copyright &copy; 2019 </div>
+
+    <!-- Header -->
+    <!-- <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+        <img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">
+        <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span class="w3-hide-small w3-text-light-grey">Architects</span></h1>
         </div>
+    </header> -->
+    <div class="gg">
+        <img src="https://scontent.fubp1-1.fna.fbcdn.net/v/t1.0-9/61098075_692715027852613_4137217081407963136_o.jpg?_nc_cat=101&_nc_oc=AQl8cb9by7ntjFraCNVlEkkPMzdxtbuppbfuktCgQmouddNMeuQ7Xgj4rmk14Ck6yVuPnV8uD5dqk810V0kX6wch&_nc_ht=scontent.fubp1-1.fna&oh=912d5499ba55c2c02cbc2dfd5c50220a&oe=5E16AAB2"
+            style="width: 100%;">
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-16">
+        <p>Powered by <a href="https://www.facebook.com/james.kittiphon.9" title="W3.CSS" target="_blank" class="w3-hover-text-green">James</a></p>
     </footer>
+
 </body>
 
 </html>

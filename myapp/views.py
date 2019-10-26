@@ -5,6 +5,9 @@ from .models import Service
 
 # Create your views here.
 def index(req):
+        return render(req, 'myapp/index.html')
+
+def input(req):
     if (req.method == 'POST'):
         post = req.POST
         s = Service()
@@ -14,10 +17,8 @@ def index(req):
         s.save()
         services = Service.objects.all()
         print(services)
-        return render(req, 'myapp/index.html', { 'services': services })
+        return render(req, 'myapp/input.html', { 'services': services })
     else:
-        print('ร้องขอทำมะดา')
         services = Service.objects.all()
         print(services)
-        return render(req, 'myapp/index.html', { 'services': services })
-
+        return render(req, 'myapp/input.html', { 'services': services })
